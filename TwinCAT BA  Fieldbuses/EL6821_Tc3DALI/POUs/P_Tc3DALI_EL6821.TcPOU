@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
-  <POU Name="P_Tc3DALI_KL6821" Id="{d30978f9-ad53-4dd9-b9c1-4a9739b5db2d}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM P_Tc3DALI_KL6821
+  <POU Name="P_Tc3DALI_EL6821" Id="{536e41ba-6a76-4012-9c74-713036202a8c}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_Tc3DALI_EL6821
 VAR
-	KL6821_Inputs 	AT %I*			: ST_KL6821InData;
-	KL6821_Outputs 	AT %Q*			: ST_KL6821OutData;
+	EL6821_Inputs 	AT %I*			: ST_EL6821InData;
+	EL6821_Outputs 	AT %Q*			: ST_EL6821OutData;
                                 	
-	fbKL6821Communication			: FB_KL6821Communication;
+	fbEL6821Communication			: FB_EL6821Communication;
 	
-	fbDALI102DirectArcPowerControl	: FB_DALI102DirectArcPowerControl(fbKL6821Communication);
+	fbDALI102DirectArcPowerControl	: FB_DALI102DirectArcPowerControl(fbEL6821Communication);
 	// the communication link between the command FB's and the communication FB is generated via the initialisation
 	// of each command FB (see declaration line above between the brackets)
 	// Since this is done at the initialisation fase, an online change will not modify this.
@@ -19,7 +19,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[// Communication and configuration block
 // =====================================
-fbKL6821Communication(
+fbEL6821Communication(
 	bError						=> , 
 	ipResultMessage				=> , 
 	bResetMaximumDemandCounter	:= , 
@@ -31,25 +31,26 @@ fbKL6821Communication(
 	nBufferOverflowCounter		=> , 
 	bResetInactiveProcessImage	:= , 
 	bInitialise					:= , 
-	eCommandKBusWatchdog		:= E_DALIConfigurationCommand.RecallMaxLevel, 
+	eCommandEBusWatchdog		:= E_DALIConfigurationCommand.RecallMaxLevel, 
 	eCommandDI1RisingEdge		:= E_DALIConfigurationCommand.RecallMaxLevel, 
 	eCommandDI1FallingEdge		:= E_DALIConfigurationCommand.DoNothing, 
 	eCommandDI2RisingEdge		:= E_DALIConfigurationCommand.Off, 
-	eCommandDI2FallingEdge		:= E_DALIConfigurationCommand.DoNothing, 
+	eCommandDI2FallingEdge		:= E_DALIConfigurationCommand.DoNothing,
 	bDoNotLockProcessImage		:= , 
 	bDisableInternalPowerSupply	:= FALSE, 
 	bDigitalInput1Active		=> , 
 	bDigitalInput2Active		=> , 
 	bProcessImageInactive		=> , 
-	bCollisionError				=> , 
 	bPowerSupplyError			=> , 
 	bShortCircuit				=> , 
 	bInitialising				=> , 
-	nTerminalDescription		=> , 
-	nFirmwareVersion			=> , 
-	stInData					:= KL6821_Inputs, 
-	stOutData					:= KL6821_Outputs);
+	bQuiescentModeActive		=> , 
+	sTerminalDescription		=> , 
+	sFirmwareVersion			=> , 
+	stInData					:= EL6821_Inputs, 
+	stOutData					:= EL6821_Outputs);
 
+	
 // Control light with short address 10 to level 127 with middle priority
 // =====================================================================
 fbDALI102DirectArcPowerControl(

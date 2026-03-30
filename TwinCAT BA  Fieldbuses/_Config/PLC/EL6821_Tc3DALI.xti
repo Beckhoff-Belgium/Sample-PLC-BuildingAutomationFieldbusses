@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.74" ClassName="CNestedPlcProjDef">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+			<Format>
+				<Printf>%d.%d.%d.%d.%d.%d</Printf>
+				<Parameter>[0]</Parameter>
+				<Parameter>[1]</Parameter>
+				<Parameter>[2]</Parameter>
+				<Parameter>[3]</Parameter>
+				<Parameter>[4]</Parameter>
+				<Parameter>[5]</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000042}" TcBaseType="true" CName="AmsAddr">AMSADDR</Name>
+			<BitSize>64</BitSize>
+			<SubItem>
+				<Name>netId</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				<BitSize>48</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>port</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<Format>
+				<Printf>%d.%d.%d.%d.%d.%d:%d</Printf>
+				<Parameter>.netId[0]</Parameter>
+				<Parameter>.netId[1]</Parameter>
+				<Parameter>.netId[2]</Parameter>
+				<Parameter>.netId[3]</Parameter>
+				<Parameter>.netId[4]</Parameter>
+				<Parameter>.netId[5]</Parameter>
+				<Parameter>.port</Parameter>
+			</Format>
+			<Format Name="Iec">
+				<Printf>(netId:=[%d.%d.%d.%d.%d.%d], port :=%d)</Printf>
+				<Parameter>.netId[0]</Parameter>
+				<Parameter>.netId[1]</Parameter>
+				<Parameter>.netId[2]</Parameter>
+				<Parameter>.netId[3]</Parameter>
+				<Parameter>.netId[4]</Parameter>
+				<Parameter>.netId[5]</Parameter>
+				<Parameter>.port</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{C92AF341-7BD6-622A-489B-93F78F170DEA}" Namespace="Tc2_System" AutoDeleteType="true">ST_AmsAddr</Name>
+			<Comment><![CDATA[ TwinCAT AMS network address. ]]></Comment>
+			<BitSize>64</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000042}">AMSADDR</BaseType>
+		</DataType>
+		<DataType>
+			<Name GUID="{23D9D599-7728-8080-99D8-F28B8657502D}" Namespace="Tc3_DALI" AutoDeleteType="true">ST_EL6821InData</Name>
+			<BitSize>192</BitSize>
+			<SubItem>
+				<Name>nStatus</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nSendErrorCode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nNumberOfBufferEntries</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>24</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nNumberOfAddressedDevices</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nAddressingErrorCode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>40</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput01</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput02</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>49</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nRxBufferInfo</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nRxBufferFrame</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>stAdsAddr</Name>
+				<Type GUID="{C92AF341-7BD6-622A-489B-93F78F170DEA}" Namespace="Tc2_System">ST_AmsAddr</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{96760A97-B400-8B34-0A72-974D3188E47D}" Namespace="Tc3_DALI" AutoDeleteType="true">ST_EL6821OutData</Name>
+			<BitSize>64</BitSize>
+			<SubItem>
+				<Name>nCtrl</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nAddressingStartAddress</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nFrame</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+		</DataType>
+	</DataTypes>
+	<Project GUID="{6FC2CAD5-1C9E-4492-B05D-FFB4DB1027E0}" Name="EL6821_Tc3DALI" PrjFilePath="..\..\EL6821_Tc3DALI\EL6821_Tc3DALI.plcproj" TmcFilePath="..\..\EL6821_Tc3DALI\EL6821_Tc3DALI.tmc" ReloadTmc="true" AmsPort="863" FileArchiveSettings="#x000e" SymbolicMapping="true">
+		<Instance Id="#x08502300" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{57DD0A11-E425-270C-85B9-1B10C8B11FE6}">
+			<Name>EL6821_Tc3DALI Instance</Name>
+			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+			<Vars VarGrpType="1">
+				<Name>PlcTask Inputs</Name>
+				<Var>
+					<Name>P_Tc3DALI_EL6821.EL6821_Inputs</Name>
+					<Type GUID="{23D9D599-7728-8080-99D8-F28B8657502D}" Namespace="Tc3_DALI">ST_EL6821InData</Type>
+				</Var>
+			</Vars>
+			<Vars VarGrpType="2" AreaNo="1">
+				<Name>PlcTask Outputs</Name>
+				<Var>
+					<Name>P_Tc3DALI_EL6821.EL6821_Outputs</Name>
+					<Type GUID="{96760A97-B400-8B34-0A72-974D3188E47D}" Namespace="Tc3_DALI">ST_EL6821OutData</Type>
+				</Var>
+			</Vars>
+			<Contexts>
+				<Context>
+					<Id>0</Id>
+					<Name>PlcTask</Name>
+					<ManualConfig>
+						<OTCID>#x02010120</OTCID>
+					</ManualConfig>
+					<Priority>32</Priority>
+					<CycleTime>10000000</CycleTime>
+				</Context>
+			</Contexts>
+			<TaskPouOids>
+				<TaskPouOid Prio="32" OTCID="#x08502301"/>
+			</TaskPouOids>
+		</Instance>
+	</Project>
+	<Mappings>
+		<OwnerA Name="EL6821_Tc3DALI Instance">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^EtherCAT Terminals^EL6821 DALI Master">
+				<Link VarA="PlcTask Inputs^P_Tc3DALI_EL6821.EL6821_Inputs^bInput01" VarB="DI Inputs Channel 1^Input"/>
+				<Link VarA="PlcTask Inputs^P_Tc3DALI_EL6821.EL6821_Inputs^bInput02" VarB="DI Inputs Channel 2^Input"/>
+				<Link VarA="PlcTask Inputs^P_Tc3DALI_EL6821.EL6821_Inputs^nAddressingErrorCode" VarB="DALI Status^Addressing Error Code"/>
+				<Link VarA="PlcTask Inputs^P_Tc3DALI_EL6821.EL6821_Inputs^nNumberOfAddressedDevices" VarB="DALI Status^Number of Addressed Devices"/>
+				<Link VarA="PlcTask Inputs^P_Tc3DALI_EL6821.EL6821_Inputs^nNumberOfBufferEntries" VarB="DALI Status^Number of Buffer Entries"/>
+				<Link VarA="PlcTask Inputs^P_Tc3DALI_EL6821.EL6821_Inputs^nRxBufferFrame" VarB="RxBuffer^Frame"/>
+				<Link VarA="PlcTask Inputs^P_Tc3DALI_EL6821.EL6821_Inputs^nRxBufferInfo" VarB="RxBuffer^Info"/>
+				<Link VarA="PlcTask Inputs^P_Tc3DALI_EL6821.EL6821_Inputs^nSendErrorCode" VarB="DALI Status^Send Error Code"/>
+				<Link VarA="PlcTask Inputs^P_Tc3DALI_EL6821.EL6821_Inputs^nStatus" VarB="DALI Status^Status"/>
+				<Link VarA="PlcTask Outputs^P_Tc3DALI_EL6821.EL6821_Outputs^nAddressingStartAddress" VarB="DALI Control^Addressing Start Address"/>
+				<Link VarA="PlcTask Outputs^P_Tc3DALI_EL6821.EL6821_Outputs^nCtrl" VarB="DALI Control^Ctrl"/>
+				<Link VarA="PlcTask Outputs^P_Tc3DALI_EL6821.EL6821_Outputs^nFrame" VarB="DALI Control^Frame"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmItem>

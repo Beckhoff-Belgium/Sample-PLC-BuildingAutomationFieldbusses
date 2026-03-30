@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.12">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.74">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{90CE8AE1-D8C1-D727-B60C-90F68839C409}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..24] OF BYTE</Name>
+			<Name GUID="{09028F86-A747-EA43-57E9-969912315B28}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..24] OF BYTE</Name>
 			<BitSize>192</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
 			<ArrayInfo>
@@ -410,16 +410,13 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{236F8EE2-F105-66D4-F854-D8BD8682C410}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..64] OF BYTE</Name>
+			<Name GUID="{EF0D6FD8-5280-B90B-93DF-5780A2638D4C}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..64] OF BYTE</Name>
 			<BitSize>512</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
 			<ArrayInfo>
 				<LBound>1</LBound>
 				<Elements>64</Elements>
 			</ArrayInfo>
-			<Hides>
-				<Hide GUID="{B41A739D-7194-0698-282C-FE77259E3132}"/>
-			</Hides>
 		</DataType>
 		<DataType>
 			<Name GUID="{2407928B-41CD-42AE-940F-BE2E2A6D71C8}" Namespace="Tc2_DMX" AutoDeleteType="true">ST_EL6851OutData</Name>
@@ -480,7 +477,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{59CB7A65-AEAB-E588-EB2A-AFE112B8A9CC}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..5] OF BYTE</Name>
+			<Name GUID="{12E80FF5-6251-C867-A464-3036E21E986D}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..5] OF BYTE</Name>
 			<BitSize>48</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
 			<ArrayInfo>
@@ -489,7 +486,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{534C1D0D-EDD1-33FC-3528-68B3DA4642CA}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..255] OF WORD</Name>
+			<Name GUID="{0D7AF360-A7F1-8997-ED9D-93F162B0C11B}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..255] OF WORD</Name>
 			<BitSize>4096</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
 			<ArrayInfo>
@@ -771,30 +768,33 @@
 				<Task Id="17" Priority="31" CycleTime="120000" AmsPort="364" AdtTasks="true">
 					<Name>PlcTask_DIOC</Name>
 				</Task>
+				<Task Id="18" Priority="32" CycleTime="100000" AmsPort="365" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
 			</Tasks>
 		</System>
 		<Plc>
 			<Project GUID="{4B273457-128B-48B2-8551-B42FBA86BD8C}" Name="KL6301_EIB_KNX" PrjFilePath="KL6301_EIB_KNX\KL6301_EIB_KNX.plcproj" TmcFilePath="KL6301_EIB_KNX\KL6301_EIB_KNX.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="KL6301_EIB_KNX\KL6301_EIB_KNX.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="KL6301_EIB_KNX\KL6301_EIB_KNX.tmc" TmcHash="{8F1B9417-C83A-6ADA-87C7-AD91E70CF4D2}">
 					<Name>KL6301_EIB_KNX Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
 							<Name>GVL_IO.KL6301_Inputs</Name>
-							<Type GUID="{90CE8AE1-D8C1-D727-B60C-90F68839C409}">ARRAY [1..24] OF BYTE</Type>
+							<Type GUID="{09028F86-A747-EA43-57E9-969912315B28}">ARRAY [1..24] OF BYTE</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
 						<Var>
 							<Name>GVL_IO.KL6301_Outputs</Name>
-							<Type GUID="{90CE8AE1-D8C1-D727-B60C-90F68839C409}">ARRAY [1..24] OF BYTE</Type>
+							<Type GUID="{09028F86-A747-EA43-57E9-969912315B28}">ARRAY [1..24] OF BYTE</Type>
 						</Var>
 					</Vars>
 					<Contexts>
 						<Context>
-							<Id NeedCalleeCall="true">0</Id>
+							<Id>0</Id>
 							<Name>PlcTask</Name>
 							<ManualConfig>
 								<OTCID>#x02010030</OTCID>
@@ -809,7 +809,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{317AEDDF-0BEE-44E6-BC6E-ABC16AB72D69}" Name="KL6821_Tc2DALI" PrjFilePath="KL6821_Tc2DALI\KL6821_Tc2DALI.plcproj" TmcFilePath="KL6821_Tc2DALI\KL6821_Tc2DALI.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="KL6821_Tc2DALI\KL6821_Tc2DALI.tmc">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="KL6821_Tc2DALI\KL6821_Tc2DALI.tmc" TmcHash="{C1444785-8096-8753-6B73-D591EC2456D9}">
 					<Name>KL6821_Tc2DALI Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -848,7 +848,7 @@
 					</UnrestoredVarLinks>
 					<Contexts>
 						<Context>
-							<Id NeedCalleeCall="true">0</Id>
+							<Id>0</Id>
 							<Name>PlcTask_Tc2DALI</Name>
 							<ManualConfig>
 								<OTCID>#x02010080</OTCID>
@@ -863,7 +863,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{684675EF-E139-4D44-897A-FAEEE71945B9}" Name="KL6821_Tc3DALI" PrjFilePath="KL6821_Tc3DALI\KL6821_Tc3DALI.plcproj" TmcFilePath="KL6821_Tc3DALI\KL6821_Tc3DALI.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="KL6821_Tc3DALI\KL6821_Tc3DALI.tmc">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="KL6821_Tc3DALI\KL6821_Tc3DALI.tmc" TmcHash="{A00B63DF-E3B8-AF99-90B9-0ADEBA3C2441}">
 					<Name>KL6821_Tc3DALI Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -882,7 +882,7 @@
 					</Vars>
 					<Contexts>
 						<Context>
-							<Id NeedCalleeCall="true">0</Id>
+							<Id>0</Id>
 							<Name>PlcTask</Name>
 							<ManualConfig>
 								<OTCID>#x02010040</OTCID>
@@ -897,7 +897,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{92E39187-1F94-4508-BA49-A84F809FE4DA}" Name="KL6581_EnOcean" PrjFilePath="KL6581_EnOcean\KL6581_EnOcean.plcproj" TmcFilePath="KL6581_EnOcean\KL6581_EnOcean.tmc" ReloadTmc="true" AmsPort="854" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="KL6581_EnOcean\KL6581_EnOcean.tmc">
+				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="KL6581_EnOcean\KL6581_EnOcean.tmc" TmcHash="{61DDB6AA-CBEC-441C-E43E-B9BB23A3A3D8}">
 					<Name>KL6581_EnOcean Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -916,7 +916,7 @@
 					</Vars>
 					<Contexts>
 						<Context>
-							<Id NeedCalleeCall="true">0</Id>
+							<Id>0</Id>
 							<Name>PlcTask</Name>
 							<ManualConfig>
 								<OTCID>#x02010050</OTCID>
@@ -931,7 +931,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{E6B7E0C4-9698-4F64-8465-1544426E9F2C}" Name="KL6831_SMI" PrjFilePath="KL6831_SMI\KL6831_SMI.plcproj" TmcFilePath="KL6831_SMI\KL6831_SMI.tmc" ReloadTmc="true" AmsPort="855" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="KL6831_SMI\KL6831_SMI.tmc">
+				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="KL6831_SMI\KL6831_SMI.tmc" TmcHash="{3FBA492F-904D-2CB9-E101-C393DC205C0A}">
 					<Name>KL6831_SMI Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -950,7 +950,7 @@
 					</Vars>
 					<Contexts>
 						<Context>
-							<Id NeedCalleeCall="true">0</Id>
+							<Id>0</Id>
 							<Name>PlcTask</Name>
 							<ManualConfig>
 								<OTCID>#x02010060</OTCID>
@@ -965,7 +965,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{E501E4FA-E912-4134-9F14-A4F140BCA7AC}" Name="EL6851_DMX" PrjFilePath="EL6851_DMX\EL6851_DMX.plcproj" TmcFilePath="EL6851_DMX\EL6851_DMX.tmc" ReloadTmc="true" AmsPort="856" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502140" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="EL6851_DMX\EL6851_DMX.tmc">
+				<Instance Id="#x08502140" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="EL6851_DMX\EL6851_DMX.tmc" TmcHash="{7D1EC693-0378-DF6E-7B2C-D5BD02A50C11}">
 					<Name>EL6851_DMX Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -984,7 +984,7 @@
 							<Comment><![CDATA[	As a default only channels 1-64 are activated in the process image of the DMX Slave terminal (EL6851-0010)
 		If more or other channels are wanted, this can be modified in the tab "Process Data" of the terminal:
 	]]></Comment>
-							<Type GUID="{236F8EE2-F105-66D4-F854-D8BD8682C410}">ARRAY [1..64] OF BYTE</Type>
+							<Type GUID="{EF0D6FD8-5280-B90B-93DF-5780A2638D4C}">ARRAY [1..64] OF BYTE</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
@@ -996,7 +996,7 @@
 					</Vars>
 					<Contexts>
 						<Context>
-							<Id NeedCalleeCall="true">0</Id>
+							<Id>0</Id>
 							<Name>PlcTask</Name>
 							<ManualConfig>
 								<OTCID>#x02010070</OTCID>
@@ -1011,12 +1011,12 @@
 				</Instance>
 			</Project>
 			<Project GUID="{6868A64D-B4ED-446C-9F9A-050174D10D04}" Name="BACnet_Rev12" PrjFilePath="BACnet_Rev12\BACnet_Rev12.plcproj" TmcFilePath="BACnet_Rev12\BACnet_Rev12.tmc" ReloadTmc="true" AmsPort="857" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502180" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="BACnet_Rev12\BACnet_Rev12.tmc">
+				<Instance Id="#x08502180" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="BACnet_Rev12\BACnet_Rev12.tmc" TmcHash="{61A31523-690C-1381-1DF4-35426673CC50}">
 					<Name>BACnet_Rev12 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
 						<Context>
-							<Id NeedCalleeCall="true">0</Id>
+							<Id>0</Id>
 							<Name>PlcTask</Name>
 							<ManualConfig>
 								<OTCID>#x020100a0</OTCID>
@@ -1031,23 +1031,23 @@
 				</Instance>
 			</Project>
 			<Project GUID="{D9DAD74A-30CA-4942-A560-259A8D2B18B5}" Name="BACnet_Rev14" PrjFilePath="BACnet_Rev14\BACnet_Rev14.plcproj" TmcFilePath="BACnet_Rev14\BACnet_Rev14.tmc" ReloadTmc="true" AmsPort="858" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x085021c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="BACnet_Rev14\BACnet_Rev14.tmc">
+				<Instance Id="#x085021c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="BACnet_Rev14\BACnet_Rev14.tmc" TmcHash="{50887869-C151-0723-12FE-255723D20F7D}">
 					<Name>BACnet_Rev14 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
 							<Name>Tc3_BACnetRev14.BACnet_Globals.DefaultAdapter.BACnet_AmsNetId</Name>
-							<Type GUID="{59CB7A65-AEAB-E588-EB2A-AFE112B8A9CC}">ARRAY [0..5] OF BYTE</Type>
+							<Type GUID="{12E80FF5-6251-C867-A464-3036E21E986D}">ARRAY [0..5] OF BYTE</Type>
 						</Var>
 						<Var>
 							<Name>P_BacnetRev14.fbBACnet_Adapter.BACnet_AmsNetId</Name>
-							<Type GUID="{59CB7A65-AEAB-E588-EB2A-AFE112B8A9CC}">ARRAY [0..5] OF BYTE</Type>
+							<Type GUID="{12E80FF5-6251-C867-A464-3036E21E986D}">ARRAY [0..5] OF BYTE</Type>
 						</Var>
 					</Vars>
 					<Contexts>
 						<Context>
-							<Id NeedCalleeCall="true">0</Id>
+							<Id>0</Id>
 							<Name>PlcTask</Name>
 							<ManualConfig>
 								<OTCID>#x020100b0</OTCID>
@@ -1062,7 +1062,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{6A77A452-0C71-4075-9181-F0C16E192F60}" Name="Modbus_RTU" PrjFilePath="Modbus_RTU\Modbus_RTU.plcproj" TmcFilePath="Modbus_RTU\Modbus_RTU.tmc" ReloadTmc="true" AmsPort="859" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502200" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Modbus_RTU\Modbus_RTU.tmc">
+				<Instance Id="#x08502200" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Modbus_RTU\Modbus_RTU.tmc" TmcHash="{CA545BE4-1A13-106A-E2C8-BA3B4F043640}">
 					<Name>Modbus_RTU Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -1083,7 +1083,7 @@
 	Memory 	AT %MW0:	WORD;
 	
  The ranges are declared as arrays here (optional)]]></Comment>
-							<Type GUID="{534C1D0D-EDD1-33FC-3528-68B3DA4642CA}">ARRAY [0..255] OF WORD</Type>
+							<Type GUID="{0D7AF360-A7F1-8997-ED9D-93F162B0C11B}">ARRAY [0..255] OF WORD</Type>
 						</Var>
 						<Var>
 							<Name>P_ModbusRTU_Master.fbModbus.InData</Name>
@@ -1098,7 +1098,7 @@
 						<Name>PlcTask Outputs</Name>
 						<Var>
 							<Name>P_ModbusRTU_Slave.Outputs</Name>
-							<Type GUID="{534C1D0D-EDD1-33FC-3528-68B3DA4642CA}">ARRAY [0..255] OF WORD</Type>
+							<Type GUID="{0D7AF360-A7F1-8997-ED9D-93F162B0C11B}">ARRAY [0..255] OF WORD</Type>
 						</Var>
 						<Var>
 							<Name>P_ModbusRTU_Master.fbModbus.OutData</Name>
@@ -1111,7 +1111,7 @@
 					</Vars>
 					<Contexts>
 						<Context>
-							<Id NeedCalleeCall="true">0</Id>
+							<Id>0</Id>
 							<Name>PlcTask</Name>
 							<ManualConfig>
 								<OTCID>#x020100d0</OTCID>
@@ -1138,7 +1138,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{4CE6B228-49BB-4CF9-A50A-1712D962192E}" Name="KL6781_MBus" PrjFilePath="KL6781_MBus\KL6781_MBus.plcproj" TmcFilePath="KL6781_MBus\KL6781_MBus.tmc" ReloadTmc="true" AmsPort="861" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502280" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="KL6781_MBus\KL6781_MBus.tmc">
+				<Instance Id="#x08502280" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="KL6781_MBus\KL6781_MBus.tmc" TmcHash="{086BF9F9-71C4-92BF-367A-623AA4FBCE4F}">
 					<Name>KL6781_MBus Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -1157,7 +1157,7 @@
 					</Vars>
 					<Contexts>
 						<Context>
-							<Id NeedCalleeCall="true">0</Id>
+							<Id>0</Id>
 							<Name>PlcTask_Fast</Name>
 							<ManualConfig>
 								<OTCID>#x02010100</OTCID>
@@ -1166,7 +1166,7 @@
 							<CycleTime>2000000</CycleTime>
 						</Context>
 						<Context>
-							<Id NeedCalleeCall="true">1</Id>
+							<Id>1</Id>
 							<Name>PlcTask</Name>
 							<ManualConfig>
 								<OTCID>#x020100f0</OTCID>
@@ -1182,7 +1182,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{0777AF84-520A-4D19-94C3-DA7291D85CF6}" Name="DIOC_Fixsus" PrjFilePath="DIOC_Fixsus\DIOC_Fixsus.plcproj" TmcFilePath="DIOC_Fixsus\DIOC_Fixsus.tmc" ReloadTmc="true" AmsPort="862" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x085022c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+				<Instance Id="#x085022c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="DIOC_Fixsus\DIOC_Fixsus.tmc" TmcHash="{3F2916E0-7706-74E2-41DA-683FB1D18F36}">
 					<Name>DIOC_Fixsus Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -1215,7 +1215,7 @@
 					</Vars>
 					<Contexts>
 						<Context>
-							<Id NeedCalleeCall="true">0</Id>
+							<Id>0</Id>
 							<Name>PlcTask</Name>
 							<ManualConfig>
 								<OTCID>#x02010110</OTCID>
@@ -1229,9 +1229,10 @@
 					</TaskPouOids>
 				</Instance>
 			</Project>
+			<Project File="EL6821_Tc3DALI.xti"/>
 		</Plc>
 		<Io>
-			<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="10.30.3.41.2.1" RemoteName="Device 1 (EtherCAT)">
+			<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="10.30.3.41.2.1" RemoteName="Device 1 (EtherCAT)" InfoImageId="2">
 				<Name>Device 1 (EtherCAT)</Name>
 				<AddressInfo>
 					<Pnp>
@@ -6034,10 +6035,13 @@
 							<CoeProfile ProfileNo="44897161"/>
 						</EtherCAT>
 					</Box>
+					<Box File="EL6821 DALI Master.xti" Id="6">
+						<EtherCAT PortABoxInfo="#x01000004"/>
+					</Box>
 					<Box Id="5" BoxType="9099">
 						<Name>DIOC</Name>
 						<ImageId>7</ImageId>
-						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x07433052" RevisionNo="#x00120000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1859 8Ch. Dig. Input 24V, 3ms, 8Ch. Dig. Output 24V, 0.5A" Desc="EL1859" PortABoxInfo="#x01000004">
+						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x07433052" RevisionNo="#x00120000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1859 8Ch. Dig. Input 24V, 3ms, 8Ch. Dig. Output 24V, 0.5A" Desc="EL1859" PortABoxInfo="#x01000006">
 							<SyncMan>010f01004400010003000000010001000100010f44090000</SyncMan>
 							<SyncMan>001001000000010004000000010001000100001000010000</SyncMan>
 							<Fmmu>0000000000000000010f00020100000001000000000000000000000000000000</Fmmu>
@@ -7296,7 +7300,7 @@
 							<ImageId>32</ImageId>
 						</Term>
 					</BusCoupler>
-					<EtherCAT SlaveType="3" AdsServerAddress="0a1e03290203ed03" PdiType="#x0208" MboxDataLinkLayer="true" CycleMBoxPolling="true" CoeType="51" FoeType="1" VendorId="#x00000002" ProductCode="#x04602c22" RevisionNo="#x00150000" InfoDataAddr="true" InfoDataNetId="true" TimeoutStateChange1="5000" TimeoutMailbox2="6000" GenerateOwnNetId="true" PortPhys="17" PortABoxInfo="#x02000001">
+					<EtherCAT SlaveType="3" AdsServerAddress="0a1e03290203ee03" PdiType="#x0208" MboxDataLinkLayer="true" CycleMBoxPolling="true" CoeType="51" FoeType="1" VendorId="#x00000002" ProductCode="#x04602c22" RevisionNo="#x00150000" InfoDataAddr="true" InfoDataNetId="true" TimeoutStateChange1="5000" TimeoutMailbox2="6000" GenerateOwnNetId="true" PortPhys="17" PortABoxInfo="#x02000001">
 						<SyncMan>001e00012600010001000000400000010001001e26010000</SyncMan>
 						<SyncMan>001f00012200010002000000400000010001001f22010000</SyncMan>
 						<SyncMan>001062002400010003000000000000000000001024010000</SyncMan>
@@ -8781,9 +8785,17 @@
 		</Io>
 	</Project>
 	<Mappings>
+		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030030"/>
 		<MappingInfo Identifier="{00000000-2201-0850-0022-500860000403}" Id="#x02030010"/>
 		<MappingInfo Identifier="{00000000-2201-0850-0022-500870000403}" Id="#x02030020"/>
+		<MappingInfo Identifier="{00000000-2141-0850-4021-500823000403}" Id="#x020300b0"/>
+		<MappingInfo Identifier="{00000000-2141-0850-4021-500831000403}" Id="#x02030090"/>
 		<MappingInfo Identifier="{00000000-21C1-0850-C021-500850000403}" Id="#x02030070"/>
+		<MappingInfo Identifier="{00000000-22C1-0850-C022-500882000403}" Id="#x020300a0"/>
+		<MappingInfo Identifier="{08502101-0010-0304-0021-500810000403}" Id="#x02030060" Watchdog="04000000040000000400000004000000"/>
+		<MappingInfo Identifier="{08502041-0010-0304-4020-500810000403}" Id="#x02030080" Watchdog="04000000040000000400000004000000"/>
+		<MappingInfo Identifier="{08502081-0010-0304-8020-500810000403}" Id="#x02030040" Watchdog="04000000040000000400000004000000"/>
+		<MappingInfo Identifier="{085020C1-0010-0304-C020-500810000403}" Id="#x02030050" Watchdog="04000000040000000400000004000000"/>
 		<OwnerA Name="TIPC^BACnet_Rev14^BACnet_Rev14 Instance">
 			<OwnerB Name="TIID^Device 3 (BACnet IP) - Rev14">
 				<Link VarA="PlcTask Inputs^P_BacnetRev14.fbBACnet_Adapter.BACnet_AmsNetId" VarB="Inputs^AmsNetId"/>
